@@ -3,7 +3,28 @@
     box-sizing: border-box;
 }
 
+h1 {
+    margin: 0px 10%;
+}
+
+
+#missingperson {
+    margin: 0px 10%;
+}
+
+form {
+    padding: 3rem;
+    background-color: #EDEDED;
+    border-radius: 1rem;
+}
+
 .form-i {
     display: flex;
     flex-direction: row;
+    align-items: center;
+    
+}
+
+label {
+    width: 10rem;
 }
