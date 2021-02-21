@@ -1,0 +1,27 @@
+/* Modify the background color */ 
+          
+        .navbar-custom { 
+            background-color:#011936; 
+        } 
+        /* Modify brand and text color */ 
+          
+        .navbar-custom .navbar-brand, 
+        .navbar-custom .navbar-text { 
+            color: white; 
+        } 
+
+.navbar-nav{
+  color: white;
+}
+
+.intro{
+  background-color: #C0DFA1;
+  border: 2px solid #C0DFA1;
+  padding: 40px;
+  border-radius: 50px 20px;
+  text-align:center;
+
+.about{
+  margin-left: 20px;
+  margin-right: 20px
+}
