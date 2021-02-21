@@ -12,3 +12,4 @@ async function getFaceDetectionBoundries(imageURL)
   });
   return res.data;
 }
+
