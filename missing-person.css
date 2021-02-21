@@ -14,7 +14,7 @@ h1 {
 
 form {
     padding: 3rem;
-    background-color: #EDEDED;
+    background-color: #ececec75;
     border-radius: 1rem;
 }
 
@@ -22,9 +22,54 @@ form {
     display: flex;
     flex-direction: row;
     align-items: center;
-    
+    margin-bottom: 1rem;
 }
 
 label {
     width: 10rem;
+}
+
+.form-control {
+    border: none;
+    border-radius: 1rem;
+}
+
+.btn-primary {
+    background-color: #C0DFA1;
+    border: none;
+    color: black;
+}
+
+.btn-primary:active {
+    border-color: #C0DFA1;
+    background-color: #C0DFA1;
+    border: none;
+    outline: none;
+    box-shadow: none;
+}
+
+.btn-primary:hover {
+    background-color: #C0DFA1;
+}
+
+.btn:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.btn:active {
+    outline: none;
+    box-shadow: none;
+}
+
+.btn:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.btn-primary:focus {
+    background-color: #C0DFA1;
+    border: #C0DFA1;
+    box-shadow: #C0DFA1;
+    outline:#C0DFA1;
 }
