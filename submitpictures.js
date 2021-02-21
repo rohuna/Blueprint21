@@ -14,16 +14,6 @@ var metadata = {
    console.log(file);
 
 
-
-
-
-
-
-
-
-
-
-
 var isMatched = false;
 var matchedId;
 
