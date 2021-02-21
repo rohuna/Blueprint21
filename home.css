@@ -27,12 +27,8 @@ nav {
 }
 
 .intro{
-  background-color: #C0DFA1;
-  border: 2px solid #C0DFA1;
-  padding: 40px;
-  border-radius: 1.5rem;
-  text-align:center;
-  margin: 0px 10%;
+  background-color: #C0DFA1 !important;
+  border: 2px solid #C0DFA1  !important;
 }
 
 .about{
