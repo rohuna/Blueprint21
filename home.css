@@ -1,16 +1,28 @@
-/* Modify the background color */ 
+/* 
+/* Modify the background color 
           
         .navbar-custom { 
             background-color:#011936; 
         } 
         /* Modify brand and text color */ 
           
-        .navbar-custom .navbar-brand, 
+        /* .navbar-custom .navbar-brand, 
         .navbar-custom .navbar-text { 
             color: white; 
         } 
 
 .navbar-nav{
+  color: white;
+}
+
+.nav-item .nav-link{
+  color: white;
+} */
+
+nav {
+  display: flex;
+  flex-direction: column;
+  background-color: #011936;
   color: white;
 }
 
@@ -29,6 +41,3 @@
 }
 
 
-.nav-item .nav-link{
-  color: white;
-}
