@@ -9,9 +9,12 @@ var storageRef = firebase.storage().ref();
 var metadata = {
     contentType: 'image/jpeg'
   };
+
+  var file =   form["img"].files[0];
+   console.log(file);
   
   // Upload file and metadata to the object 'images/mountains.jpg'
-  var uploadTask = storageRef.child('images/' + file.name).put(file, metadata);
+  var uploadTask = storageRef.child('otherphotos/' + file.name).put(file, metadata);
   
   // Listen for state changes, errors, and completion of the upload.
   uploadTask.on(firebase.storage.TaskEvent.STATE_CHANGED, // or 'state_changed'
@@ -49,7 +52,7 @@ var metadata = {
     () => {
       // Upload completed successfully, now we can get the download URL
       uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) => {
-        console.log('File available at', downloadURL);
+        
       });
     }
   );
