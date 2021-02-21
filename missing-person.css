@@ -3,12 +3,7 @@
     box-sizing: border-box;
 }
 
-nav {
+.form-i {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-}
-
-ul li{
-    display: inline;
 }
