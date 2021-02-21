@@ -112,6 +112,8 @@ var metadata = {
         db.collection("users").doc(id).update({
             faceid: res[0].faceId,
             imgurl: downloadURL
+         }).then(resp => {
+             location.href = "./home.html";
          });
        })
        
