@@ -80,13 +80,16 @@ var matchedId;
                     }
                   }).then(res => {
                     console.log(res)
-                    
-                     isMatched = true;
-                     matchedId = user.data().faceid;
+                    if(res.data.length != 0 )
+                    {
+                      isMatched = true;
+                      matchedId = user.data().faceid;
 
                      var matched = document.getElementById("matched");
+          
                      matched.innerHTML = `
                                   <div class='found-div mt-4'>
+                                    <img src = "${downloadURL}" class='mb-2' style = "width: 200px">
                                     <h3 class='found'> Missing Person Found! </h3>
                                     <img class='mb-2' src = ${user.data().imgurl} style = "width: 200px">
                                     <h4>Missing Person Info:</h1>
@@ -99,22 +102,28 @@ var matchedId;
                                     <p>Thank you so much for your help! We have provided you with the missing person's relatives' contact information so that you can further help them.<p>
                                   </div>
                                     `
-                  });
-
-                  setTimeout(function(){ 
-                    
-                    if(!isMatched)
-                    {
-                      var matched = document.getElementById("matched");
-                     matched.innerHTML = `
-                                  <div class='found-div mt-4'>
-                                    <h3 class='found' style = "color: red !important"> No Missing Person Found</h3>
-                                    <br>
-                                    <p>Thank you so much for your help! Unfortunately, your picture does not contain a face from our records.<p>
-                                  </div>
-                                    `
                     }
-                  }, 8000)
+                    else{
+                      setTimeout(function(){
+                        if(!isMatched)
+                        {
+                          var matched = document.getElementById("matched");
+                          matched.innerHTML = `
+                                       <div class='found-div mt-4'>
+                                         <h3 class='found' style = "color: red !important"> No Missing Person Found</h3>
+                                         <br>
+                                         <p>Thank you so much for your help! Unfortunately, your picture does not contain a face from our records.<p>
+                                       </div>
+                                         `
+                           
+                        }
+                      }, 5000)
+                        
+                      
+                    }
+                     
+                     
+                  });
                 })
             
                 
