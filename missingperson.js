@@ -110,7 +110,8 @@ var metadata = {
        uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) => {
        getFaceDetectionBoundries(downloadURL).then(res => {
         db.collection("users").doc(id).update({
-            faceid: res[0].faceId
+            faceid: res[0].faceId,
+            imgurl: downloadURL
          });
        })
        

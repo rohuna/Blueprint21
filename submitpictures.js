@@ -61,8 +61,7 @@ var matchedId;
   
         case 'storage/unknown':
           // Unknown error occurred, inspect error.serverResponse
-          bf
-          reak;
+          break;
       }
     }, 
     () => {
@@ -79,7 +78,7 @@ var matchedId;
                   res.forEach(face => {
                     ids.push(face.faceId)
                 })
-
+                console.log(user.data().faceid, ids)
                 axios.post('https://westus.api.cognitive.microsoft.com/face/v1.0/findsimilars', {  faceId: user.data().faceid,
                 "faceIds": ids,
                 "maxNumOfCandidatesReturned": 10,
@@ -90,9 +89,22 @@ var matchedId;
                         "Content-Type": "application/json"
                     }
                   }).then(res => {
-
+                    console.log(res)
                      isMatched = true;
-                     matechedId = res.data[0].faceId;
+                     matchedId = user.data().faceid;
+
+                     var matched = document.getElementById("matched");
+                     matched.innerHTML = `<h3 style = "color: green"> Missing Person Found! </h3>
+                                 <img src = ${user.data().imgurl} style = "width: 200px">
+                                    <h1>Missing Person Info:</h1>
+                                    <p><b>Name:</b> ${user.data().name}</p>
+                                    <p><b>Age:</b> ${user.data().age}</p>
+                                    <h1>Contact Information:</h1>
+                                    <p><b>Phone Number:</b> ${user.data().phone}</p>
+                                    <p><b>Email:</b> ${user.data().email}</p>`
+                     
+
+                    
                   });
                 })
             
