@@ -61,7 +61,8 @@ var matchedId;
   
         case 'storage/unknown':
           // Unknown error occurred, inspect error.serverResponse
-          break;
+          bf
+          reak;
       }
     }, 
     () => {
