@@ -11,44 +11,51 @@
 
 </head>
 <body>
-    <h1>File a Missing Person Case</h1>
+    <h1 class='my-4'><b>File a Missing Person Case</b></h1>
     
-    <form id = "missingperson"action="">
+    <form id="missingperson" class='' action="">
+
+        <h2><b>General Information</b></h2>
+        <p>This information will be publicly shared to help other recognize the missing person</p>
+
         <div class='form-i'>
-            <label for="name">Full Name:</label><br>
-            <input type="text" id="name" name="name" value=""><br>
+            <label for="name" class='form-label'>Full Name:</label><br>
+            <input type="text" id="name" name="name" class="form-control"><br>
         </div>
 
         <div class='form-i'>
-            <label for="phone">Age:</label><br>
-            <input type="text" id="age" name="age" value="">
+            <label for="phone" class='form-label'>Age:</label><br>
+            <input type="text" id="age" name="age" class="form-control">
         </div>
         <br>
+
+        <h2><b>Private Information</b></h2>
+        <p>This information will be kept private. We will share this information if the missing person was found in someone’s picture </p>
+
         <div class='form-i'>
-            <label for="email">E-Mail:</label><br>
-            <input type="text" id="email" name="email" value=""><br>
+            <label for="email" class='form-label'>E-Mail:</label><br>
+            <input type="text" id="email" name="email" class="form-control"><br>
         </div>
 
         <div class='form-i'>
-            <label for="lname">Phone Number:</label><br>
-            <input type="text" id="phone" name="phone" value="">
+            <label for="phone" class='form-label'>Phone Number:</label><br>
+            <input type="text" id="phone" name="phone" class="form-control">
         </div>
 
-        <br><br>
+        <br>
 
         <div class='form-i'>
-            <label for="img">Select image:</label>
-            <input type="file" id="img" name="img" accept="image/*" multiple>
+            <label for="img">Select image(s):</label>
+            <input class='form-control'type="file" id="img" name="img" accept="image/*" multiple>
         </div>
+        <div class="form-text">The more pictures you submit, the more likely our algorithm will detect a match.</div>
+
+        <br>
 
         <div class='form-i'>
-            <input type="submit" value="Submit">
+            <input type="submit" value="Submit" class='btn btn-primary submit'>
         </div>
       </form> 
-
-      <form action="">
-        
-      </form>
 </body>
 
    <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
