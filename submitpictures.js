@@ -14,16 +14,6 @@ var metadata = {
    console.log(file);
 
 
-
-
-
-
-
-
-
-
-
-
 var isMatched = false;
 var matchedId;
 
@@ -94,17 +84,20 @@ var matchedId;
                      matchedId = user.data().faceid;
 
                      var matched = document.getElementById("matched");
-                     matched.innerHTML = `<h3 style = "color: green"> Missing Person Found! </h3>
-                                 <img src = ${user.data().imgurl} style = "width: 200px">
-                                    <h1>Missing Person Info:</h1>
+                     matched.innerHTML = `
+                                  <div class='found-div mt-4'>
+                                    <h3 class='found'> Missing Person Found! </h3>
+                                    <img class='mb-2' src = ${user.data().imgurl} style = "width: 200px">
+                                    <h4>Missing Person Info:</h1>
                                     <p><b>Name:</b> ${user.data().name}</p>
                                     <p><b>Age:</b> ${user.data().age}</p>
-                                    <h1>Contact Information:</h1>
+                                    <h4>Contact Information:</h1>
                                     <p><b>Phone Number:</b> ${user.data().phone}</p>
-                                    <p><b>Email:</b> ${user.data().email}</p>`
-                     
-
-                    
+                                    <p><b>Email:</b> ${user.data().email}</p>
+                                    <br>
+                                    <p>Thank you so much for your help! We have provided you with the missing person's relatives' contact information so that you can further help them.<p>
+                                  </div>
+                                    `
                   });
 
                   setTimeout(function(){  }, 8000)

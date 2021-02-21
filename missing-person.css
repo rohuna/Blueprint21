@@ -1,24 +1,15 @@
-/* Modify the background color */ 
-          
-.navbar-custom { 
-    background-color:#011936; 
-} 
-/* Modify brand and text color */ 
-  
-.navbar-custom .navbar-brand, 
-.navbar-custom .navbar-text { 
-    color: white; 
-} 
-
-.navbar-nav{
-color: white;
-}
-
-
 * {
     margin: 0;
     box-sizing: border-box;
 }
+
+nav {
+    display: flex;
+    flex-direction: row;
+    background-color: #011936;
+    color: white;
+    justify-content: space-between;
+  }
 
 h1 {
     margin: 0px 10%;
@@ -50,6 +41,19 @@ label {
     border: none;
     border-radius: 1rem;
 }
+
+.found-div {
+    margin: 0px 10%;
+    padding: 3rem;
+    background-color: #ececec75;
+    border-radius: 1rem;
+}
+
+.found {
+    color:green;
+}
+
+
 
 .btn-primary {
     background-color: #C0DFA1;
