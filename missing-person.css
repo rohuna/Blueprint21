@@ -1,6 +1,7 @@
 * {
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
 }
 
 nav {
@@ -9,7 +10,7 @@ nav {
     background-color: #011936;
     color: white;
     justify-content: space-between;
-  }
+}
 
 h1 {
     margin: 0px 10%;
