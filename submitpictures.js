@@ -12,6 +12,21 @@ var metadata = {
 
   var file =   form["img"].files[0];
    console.log(file);
+
+
+
+
+
+
+
+
+
+
+
+
+var isMatched = false;
+var matchedId;
+
   
   // Upload file and metadata to the object 'images/mountains.jpg'
   var uploadTask = storageRef.child('otherphotos/' + file.name).put(file, metadata);
@@ -52,6 +67,46 @@ var metadata = {
     () => {
       // Upload completed successfully, now we can get the download URL
       uploadTask.snapshot.ref.getDownloadURL().then((downloadURL) => {
+
+        
+        db.collection("users").get().then(function(querySnapshot) {querySnapshot.forEach(user => {
+            if(user.data().faceid)
+            {   
+                var ids = [];
+                console.log(getFaceDetectionBoundries(downloadURL))
+                getFaceDetectionBoundries(downloadURL).then(res => {
+                  res.forEach(face => {
+                    ids.push(face.faceId)
+                })
+
+                axios.post('https://westus.api.cognitive.microsoft.com/face/v1.0/findsimilars', {  faceId: user.data().faceid,
+                "faceIds": ids,
+                "maxNumOfCandidatesReturned": 10,
+                "mode": "matchPerson"
+             }, {
+                    headers: {
+                        "Ocp-Apim-Subscription-Key": "a3d063cedf564fb990de3b2d434238fd",
+                        "Content-Type": "application/json"
+                    }
+                  }).then(res => {
+
+                     isMatched = true;
+                     matechedId = res.data[0].faceId;
+                  });
+                })
+            
+                
+                
+                console.log(ids)
+
+
+            }
+        })
+        
+    });
+
+        
+
         
       });
     }
@@ -61,3 +116,25 @@ var metadata = {
 
 
 })
+
+async function getFaceDetectionBoundries(imageURL)
+{
+  const res = await axios.post('https://rohunfacerec.cognitiveservices.azure.com/face/v1.0/detect?detectionModel=detection_02&returnFaceId=true&returnFaceLandmarks=false', { url: imageURL }, {
+    headers: {
+        "Ocp-Apim-Subscription-Key": "a3d063cedf564fb990de3b2d434238fd",
+        "Content-Type": "application/json"
+    }
+  });
+  return res.data;
+}
+
+async function getFaceDetectionBoundries(imageURL)
+{
+  const res = await axios.post('https://rohunfacerec.cognitiveservices.azure.com/face/v1.0/detect?detectionModel=detection_02&returnFaceId=true&returnFaceLandmarks=false', { url: imageURL }, {
+    headers: {
+        "Ocp-Apim-Subscription-Key": "a3d063cedf564fb990de3b2d434238fd",
+        "Content-Type": "application/json"
+    }
+  });
+  return res.data;
+}
