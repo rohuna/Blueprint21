@@ -39,34 +39,40 @@
       </div>
     </nav>
 
-    <header>
-      <div class="jumbotron text-center" style="background-color:#FFFFFF" style="width: 40%">
-        <h1>Website Name</h1>
+   
+
+    <div class="container">
+      <div class = "row" id = "gallery">
+        
       </div>
-    </header>
+    </div>
+     <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-app.js"></script>
 
-    <main>
-      <div class="intro">
-        <h3><b><i>Help us find missing people</i></b></h3>
-        <h6>here is just some filler text</h6>
-      </div>
+  <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-analytics.js"></script>
 
-     <br>
-     <br>
+  <!-- Add Firebase products that you want to use -->
+  <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-firestore.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.js" integrity="sha512-otOZr2EcknK9a5aa3BbMR9XOjYKtxxscwyRHN6zmdXuRfJ5uApkHB7cz1laWk2g8RKLzV9qv/fl3RPwfCuoxHQ==" crossorigin="anonymous"></script>
+   <script>
+        const config = {
+        apiKey: "AIzaSyA80sADNvKxF0nJdvdBH7MUT0lBGOm47hA",
+        authDomain: "facematch-6e6ff.firebaseapp.com",
+        projectId: "facematch-6e6ff",
+        storageBucket: "facematch-6e6ff.appspot.com",
+        messagingSenderId: "643836722537",
+        appId: "1:643836722537:web:9076b6df6f43c3123ad1f8",
+        measurementId: "G-BV0PZQDF21"
+        };
+        firebase.initializeApp(config)
+        const db = firebase.firestore();
 
-      <div class="about">
-        <h2>How our program works</h2>
-        <p>People can upload any pictures they took and our algorithm will scan them for any missing people.</p>
-        <h2>Privacy</h2>
-        <p>Any data that is not needed will be kept private. Your pictures will only be run through the algorithm, and we will have no way or retrieving them to impede on your privacy.</p>
-      </div>
-    </main>
+        
+</script>
 
-    <br>
-    <br>
-    <br>
-    <br>
-
+<script src="index.js"></script>
 
   </body>
 
