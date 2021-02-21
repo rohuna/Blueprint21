@@ -80,6 +80,7 @@ var matchedId;
                     }
                   }).then(res => {
                     console.log(res)
+                    
                      isMatched = true;
                      matchedId = user.data().faceid;
 
@@ -100,7 +101,20 @@ var matchedId;
                                     `
                   });
 
-                  setTimeout(function(){  }, 8000)
+                  setTimeout(function(){ 
+                    
+                    if(!isMatched)
+                    {
+                      var matched = document.getElementById("matched");
+                     matched.innerHTML = `
+                                  <div class='found-div mt-4'>
+                                    <h3 class='found' style = "color: red !important"> No Missing Person Found</h3>
+                                    <br>
+                                    <p>Thank you so much for your help! Unfortunately, your picture does not contain a face from our records.<p>
+                                  </div>
+                                    `
+                    }
+                  }, 8000)
                 })
             
                 
