@@ -13,3 +13,17 @@ async function getFaceDetectionBoundries(imageURL)
   return res.data;
 }
 
+
+
+var html = "";
+db.collection("users").get().then(snap => {
+    var i = 0;
+    snap.forEach(doc => {
+        html += `<div class = "col-sm-4">
+            <img src = ${doc.data().imgurl} style = "width: 80%; margin: 10%;">
+            <h1>Name: ${doc.data().name } Age: ${doc.data().age }</h1> </div>
+        `
+    })
+    document.getElementById("gallery").innerHTML = html;
+})
+
