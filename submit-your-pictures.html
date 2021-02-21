@@ -5,20 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="missing-person.css">
 </head>
 <body>
-    <p>This will be completely anonymous and private.</p>
+    <h1 class='my-4'><b>Submit Your Pictures</b></h1>
+    <p class='disclaimer mb-4'>This form will be completely anonymous and its contents will be kept private.</p>
     <form id = "uploadpics" action="">
-        <label for="img">Select image:</label>
-        <input type="file" id="img" name="img" accept="image/*" multiple>
+        <div class='form-i mb-2'>
+            <label for="img">Select image(s):</label>
+            <input class='form-control' type="file" id="img" name="img" accept="image/*">
+        </div>
+        <div class="form-text">The more pictures you post, the more likely a lost person will be found in them.</div>
 
-
-        <input type="submit" value="Submit">
+        <div class='form-i mt-4'>
+            <input type="submit" value="Submit" class='btn btn-primary submit'>
+        </div>
       </form> 
-
-      <form action="">
-        
-      </form>
 
        <!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
    <script src="https://www.gstatic.com/firebasejs/8.2.8/firebase-app.js"></script>

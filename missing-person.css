@@ -7,8 +7,7 @@ h1 {
     margin: 0px 10%;
 }
 
-
-#missingperson {
+.disclaimer {
     margin: 0px 10%;
 }
 
@@ -16,6 +15,7 @@ form {
     padding: 3rem;
     background-color: #ececec75;
     border-radius: 1rem;
+    margin: 0px 10%;
 }
 
 .form-i {
